@@ -250,16 +250,32 @@
     
 <!-- モーダルの設定 -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
-  <table>
-	  <tr>
-		  <th>申し込みコース</th>
-	  </tr>
-	  <tr>
-		  <td>&nbsp;</td>
-		  <td><p class="courcevalue"></p></td>
- 	  </tr<
-  </table>
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">入力内容の確認</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <p class="text-muted">タイトル</p>
+          <p class="px-2" id="modalTitle"></p>
+        </div>
+        <div>
+          <p class="text-muted">本文</p>
+          <p class="px-2" id="modalBody"></p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+        <button type="button" class="btn btn-primary">OK</button>
+      </div><!-- /.modal-footer -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+</form>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
