@@ -277,7 +277,7 @@
               alert("お名前が未入力です。")
           }else if(!s_email){
               alert("メールアドレスが未入力です。")
-          }else if( $("#check-1:checked").val() != "on"){
+          }else if( $('#check-1').prop('checked') == false){
               alert("ご希望の曜日が未選択です。")
           }else{
             $.post( 'https://script.google.com/macros/s/AKfycby9z5vyfleBxMgxsqXJOWF8kNrrxhaBWpt_B6lJwFP5618ZSsiJ4la4muMhlfg_77BJ/exec', $('form').serialize() );
