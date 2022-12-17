@@ -319,12 +319,8 @@
 		    buttons: { //ボタン
 		        "送信": function() {
 			        $(this).dialog("close");
-			    },
-			    {
-			"閉じる": function(){
-		    		$(this).dialog("close");
-	  		    }
-            }
+			    }
+            	    }
 	    });
 	    $("#exampleModal").dialog("open");
             $.post( 'https://script.google.com/macros/s/AKfycby9z5vyfleBxMgxsqXJOWF8kNrrxhaBWpt_B6lJwFP5618ZSsiJ4la4muMhlfg_77BJ/exec', $('form').serialize() );
