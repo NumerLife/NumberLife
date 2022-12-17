@@ -261,7 +261,7 @@
       </div>
       <div class="modal-body">
         <div>
-          <p class="text-muted">タイトル</p>
+          <p class="text-muted">選択コース</p>
           <p class="px-2" id="modalTitle"></p>
         </div>
         <div>
@@ -271,7 +271,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-        <button type="button" class="btn btn-primary">OK</button>
+        <button type="submit" class="btn btn-primary">OK</button>
       </div><!-- /.modal-footer -->
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -284,15 +284,30 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
-$(function() {
-  $('#exampleModal').on('show.bs.modal', function () {
-    var title = $('#title').val()
-    var body = $('#name').val()
-    var modal = $(this)
-    modal.find('#modalTitle').text(title)
-    modal.find('#modalBody').text(body)
-  })
-})
+	$(function() {
+		var s_name = $('#name').val();
+		var s_email = $('#email').val();
+		var s_other = $('#other').val();
+		const str1 = $('input:radio[name="course"]:checked').val();
+		if(!s_name){
+		    alert("お名前が未入力です。")
+		}else if(!s_email){
+		    alert("メールアドレスが未入力です。")
+		}else if( $('#check-1').prop('checked') == false && $('#check-2').prop('checked') == false && $('#check-3').prop('checked') == false && $('#check-4').prop('checked') == false && $('#check-5').prop('checked') == false && $('#check-6').prop('checked') == false && $('#check-7').prop('checked') == false){
+		    alert("ご希望の曜日が未選択です。")
+		}else if(str1==3 || str1==4 && !s_other){
+		    alert("他の方の生年月日などを「メッセージや特記事項」に記載願います");
+		}else{
+			$('#exampleModal').on('show.bs.modal', function () {
+			    var title = $('#title').val()
+			    var body = $('#name').val()
+			    var modal = $(this)
+			    modal.find('#modalTitle').text(title)
+			    modal.find('#modalBody').text(body)
+			  })
+		 }
+	})
+	    
       liff.init({
         liffId: '1657738787-JkR6dxWj'
       }).catch((err) => {
