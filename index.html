@@ -1,0 +1,285 @@
+<html>
+<head>
+    <base target="_top">
+　  <?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>申し込み</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+</head>
+<body>
+
+    <form>
+
+      <table>
+        <tr>
+          <th>数命籠数鑑定コース</th><th class="required "></th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+            <input id="radio-a" type="radio" name="course" value="1" checked><label for="radio-a"> ☆数命籠数鑑定のみ・お一人（メール）</label><br>
+          </td>
+          <td class="mgr-10"> ￥7,000</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+            <input id="radio-b" type="radio" name="course" value="2"><label for="radio-b"> ☆数命籠数鑑定・悩み相談・お一人（オンライン45分）</label><br>
+          </td>
+          <td> ￥12,000</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+            <input id="radio-c" type="radio" name="course" value="3"><label for="radio-c"> ☆数命籠数鑑定・相性鑑定・お二人（オンライン60分）</label><br>
+          </td>
+          <td> ￥22,000</td>
+        </tr>
+       <tr>
+          <td>&nbsp;</td>
+          <td>
+            <input id="radio-c" type="radio" name="course" value="3"><label for="radio-c"> ☆数命籠数鑑定・家族鑑定・５名まで（オンライン90分）</label><br>
+          </td>
+          <td> ￥45,000</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td class="fontsize1">現在、対応しているのは、オンライン（zoom)での鑑定です<br>お支払いは振込になります。振込先などの詳細は申込後にメールで連絡させて頂きます<br>送信元メールアドレスはxxxxxになります</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th>名前</th></th><th class="required "></th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input type="text" name="name" autocomplete="name" placeholder="山田　太郎"　required="required"/>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th>生年月日</th></th><th class="required "></th>
+        </tr>
+        <tr>
+           <td>&nbsp;</td>
+          <td>
+              <input type="date" name="calendar" max="9999-12-31" required="required"/>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th></th><th class="required "></th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input type="email" name="email" class="email" autocomplete="email" placeholder="xxxxxx@example.com"　required="required"/>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th>ご希望の曜日<br>（複数回答可）</th></th><th class="required "></th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-1" type="checkbox" name="week" value="Mon"><label for="check-1">月曜日</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-2" type="checkbox" name="week" value="Tue"><label for="check-2">火曜日</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-3" type="checkbox" name="week" value="Wed"><label for="check-3">水曜日</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-4" type="checkbox" name="week" value="Thu"><label for="check-4">木曜日</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-5" type="checkbox" name="week" value="Fri"><label for="check-5">金曜日</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-6" type="checkbox" name="week" value="Sat"><label for="check-6">土曜日</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-7" type="checkbox" name="week" value="Sun"><label for="check-7">日曜日</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th>ご希望時間帯</th></th><th></th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-time1" type="checkbox" name="time" value="1"><label for="check-time1">10:00～13:00</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-time2" type="checkbox" name="time" value="2"><label for="check-time2">13:00～18:00</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-time3" type="checkbox" name="time" value="3"><label for="check-time3">18:00～21:00</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td class="fontsize1">ご希望に添えない場合は、メールにて日程の調整を行います</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th>メッセージや特記事項</th><th></th>
+        </tr>
+        <tr>
+          <td class="fontsize1">相性診断や複数鑑定の方は、<br>他の方の生年月日を明記ください</td>
+          <td>
+            <textarea name="other" cols="50" rows="7"></textarea>
+          </td>
+        </tr>
+         <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th>キャンセルについて</th></th><th class="required "></th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="cancel" type="checkbox" name="cancel" value="cancel"><label for="cancel">以下のキャンセルポリシーに同意しました</label><br>
+          </td>
+        </tr>
+        <tr>
+          <th>&nbsp;</th>
+          <td colspan="3">・日時の変更は、3回まで可能です。<br>
+          ・申し込み後、5日以内に振込をお願いします。<br>
+          　振込が確認できない場合は、キャンセルとさせて頂きます。<br>
+          ・無断でのキャンセルの場合は、今後一切の申込みをお受けできません。</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th>免責事項</th></th><th></th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td colspan="3">
+              ☆鑑定は独自の観点からのものとなります。絶対的な未来予想などは<br>
+              　できかねますことをご了承ください。<br>
+              ☆当方が行うセッションメニューはエネルギーワークを用いたコーチ<br>
+              　ングカウンセリングです。<br>
+              　コーチング、カウンセリングやヒーリング、エネルギーワークは、<br>
+              　医者や医療機関を代替するものではありません。<br><br>
+              ☆ヒーリング、エネルギーワークは癒しを目的とした祈りであり、そ<br>
+              　の成果の如何に関わらず心身の不調のある方は医者や医療機関に相<br>
+              　談されることを強く推奨します。<br><br>
+              ☆ヒーリング、エネルギーワークは特定の効果を保証しません。<br>
+              　ヒーリング、エネルギーワークによる効果や成果は人によって異なり<br>
+              　ます。<br><br>
+              ☆セッション終了後による心身の不調等の一切の責任は、当方では負<br>
+              　いかねます事をご了承ください。<br><br>
+              ☆また当方は、いかなる宗教団体にも関与しておりません。<br>
+              　また、宗教団体に対してなんの思想も持ち合わせておりません、ニュ<br>
+              　ートラルな状態です。勧誘等もかたくお断りします。<br><br>
+              ☆当方のサービスを申し込まれる方は、上記の免責事項に同意、了承し<br>
+              　たとみなします。
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th>問い合わせ先</th></th><th></th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td colspan="3">
+              株式会社 Star Sooul<br>
+              E-mail: XXXXX@XXX.co.jp
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="4" align="center">
+            <input type="submit" class="mt-4 btn btn-primary" value="内容確認画面へ">
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script>
+      liff.init({
+        liffId: '1657738787-JkR6dxWj'
+      }).catch((err) => {
+        console.log(err);
+      });
+
+      liff.ready.then(() => {
+        if (!liff.isLoggedIn()) {
+          liff.login();
+        }
+        const idToken = liff.getDecodedIDToken();
+        const userId = idToken.sub;
+        $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
+      })
+
+      $('form').submit(function( event ) {
+        event.preventDefault();
+        $.post( 'https://script.google.com/macros/s/AKfycby9z5vyfleBxMgxsqXJOWF8kNrrxhaBWpt_B6lJwFP5618ZSsiJ4la4muMhlfg_77BJ/exec', $('form').serialize() );
+      });
+    </script>
+
+</body>
+</html>
