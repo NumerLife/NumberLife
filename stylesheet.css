@@ -1,0 +1,48 @@
+<style>
+#h2-orange {
+  color: orange;
+  font-size: x-large;
+}
+.p-small {
+  color: gray;
+  font-size: small;
+}
+.gas {
+  font-size: large;
+  font-weight: bold;
+}
+.required::after {
+  content: "必須";
+  background-color: red;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 10px;
+  padding: 3px 7px;
+  margin: 0px 5px;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 10px;
+  display: inline-block;
+}
+.fontsize1{
+    font-size: 75%;
+    color:blue;
+}
+.fontsize2{
+    font-size: 150%;
+}
+.fontsize3{
+    font-size: 75%;
+}
+.mgr-10{
+    margin-left : 10px;
+}
+input[type=email], select
+{
+    width:90%; 
+    box-sizing:border-box;
+}
+</style>
