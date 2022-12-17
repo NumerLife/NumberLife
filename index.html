@@ -59,7 +59,7 @@
         <tr>
           <td>&nbsp;</td>
           <td>
-              <input type="text" name="name" autocomplete="name" placeholder="山田　太郎"　required="required"/>
+              <input id="name" type="text" name="name" autocomplete="name" placeholder="山田　太郎"　required="required"/>
           </td>
         </tr>
         <tr>
@@ -83,7 +83,7 @@
         <tr>
           <td>&nbsp;</td>
           <td>
-              <input type="email" name="email" class="email" autocomplete="email" placeholder="xxxxxx@example.com"　required="required"/>
+              <input id="email" type="email" name="email" class="email" autocomplete="email" placeholder="xxxxxx@example.com"　required="required"/>
           </td>
         </tr>
         <tr>
@@ -176,7 +176,7 @@
         <tr>
           <td>&nbsp;</td>
           <td>
-            <textarea name="other" cols="30" rows="7"></textarea>
+            <textarea id="other" name="other" cols="30" rows="7"></textarea>
           </td>
         </tr>
          <tr>
@@ -271,7 +271,12 @@
 
       $('form').submit(function( event ) {
         event.preventDefault();
-        $.post( 'https://script.google.com/macros/s/AKfycby9z5vyfleBxMgxsqXJOWF8kNrrxhaBWpt_B6lJwFP5618ZSsiJ4la4muMhlfg_77BJ/exec', $('form').serialize() );
+          var s_name = $('#name').val();
+          if(!s_name){
+              alert("お名前が未入力です。")
+          }else{
+            $.post( 'https://script.google.com/macros/s/AKfycby9z5vyfleBxMgxsqXJOWF8kNrrxhaBWpt_B6lJwFP5618ZSsiJ4la4muMhlfg_77BJ/exec', $('form').serialize() );
+          }
       });
     </script>
 
