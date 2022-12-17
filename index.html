@@ -284,6 +284,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
+	    
+	    	    $('#exampleModal').on('show.bs.modal', function () {
+			    var modal = $(this)
+			    modal.find('#modalTitle').text(s_name)
+			    modal.find('#modalBody').text(s_email)
+			  });
+	    
       liff.init({
         liffId: '1657738787-JkR6dxWj'
       }).catch((err) => {
@@ -314,11 +321,7 @@
           }else if(str1==3 || str1==4 && !s_other){
               alert("他の方の生年月日などを「メッセージや特記事項」に記載願います");
           }else{
-	    $('#exampleModal').on('show.bs.modal', function () {
-			    var modal = $(this)
-			    modal.find('#modalTitle').text(s_name)
-			    modal.find('#modalBody').text(s_email)
-			  })
+
 	    $("#exampleModal").dialog("open");
             $.post( 'https://script.google.com/macros/s/AKfycby9z5vyfleBxMgxsqXJOWF8kNrrxhaBWpt_B6lJwFP5618ZSsiJ4la4muMhlfg_77BJ/exec', $('form').serialize() );
           }
