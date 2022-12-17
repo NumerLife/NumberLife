@@ -271,11 +271,7 @@
 
       $('form').submit(function( event ) {
         event.preventDefault();
-        if(form.email.value == ''){
-            alert("メールアドレスを入力してください");
-        }else{
-            $.post( 'https://script.google.com/macros/s/AKfycby9z5vyfleBxMgxsqXJOWF8kNrrxhaBWpt_B6lJwFP5618ZSsiJ4la4muMhlfg_77BJ/exec', $('form').serialize() );
-        }
+        $.post( 'https://script.google.com/macros/s/AKfycby9z5vyfleBxMgxsqXJOWF8kNrrxhaBWpt_B6lJwFP5618ZSsiJ4la4muMhlfg_77BJ/exec', $('form').serialize() );
       });
     </script>
 
