@@ -315,27 +315,7 @@
           }else if(str1==4 && !s_other){
               alert("他の方の生年月日などを「メッセージや特記事項」に記載願います");
 	  }else{
-		$("#exampleModal").dialog({
-			autoOpen: false, 
-			modal:true, //モーダル表示
-			title:"内容確認", //タイトル
-			buttons: { //ボタン
-			"確認": function() {
-				
-				$(this).dialog("close");
-				},
-			"キャンセル": function() {
-				$(this).dialog("close"); 
-				retrun false;
-				}
-			}
-		});
-    		var modal = $(this)
-    		modal.find('#modalTitle').text("コース")
-    		modal.find('#modalBody').text("名前")
-		$("#exampleModal").dialog("open");
-		  $.post( 'https://script.google.com/macros/s/AKfycby9z5vyfleBxMgxsqXJOWF8kNrrxhaBWpt_B6lJwFP5618ZSsiJ4la4muMhlfg_77BJ/exec', $('form').serialize() );
-            
+		  $.post( 'https://script.google.com/macros/s/AKfycby9z5vyfleBxMgxsqXJOWF8kNrrxhaBWpt_B6lJwFP5618ZSsiJ4la4muMhlfg_77BJ/exec', $('form').serialize() );           
           }
       });
     </script>
