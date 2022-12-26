@@ -10,161 +10,315 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
-<form action="./" method="post">
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||
- 
-フォームの入力部分
- 
-||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<div id="ContactInput">
-  <table id="ContactTable" cellpadding="0" cellspacing="0" border="0" summary="">
-  <tr id="Cnt1" class="CntItem CntInput Require">
-    <th>お名前(<span class="Notice">※</span>)</th>
-    <td><input type="text" name="your-name" value="" size="20" /></td>
-  </tr>
-  <tr id="Cnt2" class="CntItem CntInput Require CntMail">
-    <th>メールアドレス(<span class="Notice">※</span>)</th>
-    <td><input type="email" name="your-email" value="" size="20" /></td>
-  </tr>
-  <tr id="Cnt3" class="CntItem CntRadio">
-    <th>性別</th>
-    <td><input type="radio" name="sex" value="女性" />女性<br />
-    <input type="radio" name="sex" value="男性" />男性
-    </td>
-  </tr>
-  <tr id="Cnt4" class="CntItem CntCheck Require">
-    <th>お問い合わせ項目(<span class="Notice">※</span>)</th>
-    <td>
-    <input type="checkbox" name="cat01" value="このサイトについて" />このサイトについて<br />
-    <input type="checkbox" name="cat02" value="著者について" />著者について<br />
-    <input type="checkbox" name="cat02" value="その他" />その他
-    </td>
-  </tr>
-    <tr id="Cnt5" class="CntItem CntText Require">
-    <th>お問い合わせ内容(<span class="Notice">※</span>)</th>
-    <td><textarea name="your-message"></textarea></td>
-  </tr>
-  <tr>
-    <th>&nbsp;</th>
-    <td><a id="BtConfirm">入力内容の確認</a>&nbsp;
-    <input id="BtReset" type="reset" value="入力内容のリセット"></td>
-  </tr>
-  </table>
-</div>
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||
- 
-確認画面
- 
-||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<div id="ContactConfirm">
-  <table id="ConfirmTable" cellpadding="0" cellspacing="0" border="0" summary="">
-  <tr>
-    <th>お名前(<span class="Notice">※</span>)</th>
-    <td id="Cfm1" class="CfmItem"><div>&nbsp;</div></td>
-  </tr>
-  <tr>
-    <th>メールアドレス(<span class="Notice">※</span>)</th>
-    <td id="Cfm2" class="CfmItem"><div>&nbsp;</div></td>
-  </tr>
-  <tr>
-    <th>性別</th>
-    <td id="Cfm3" class="CfmItem"><div>&nbsp;</div></td>
-  </tr>
-  <tr>
-    <th>お問い合わせ項目(<span class="Notice">※</span>)</th>
-    <td id="Cfm4" class="CfmItem"><div>&nbsp;</div></td>
-  </tr>
-  <tr>
-    <th>お問い合わせ内容(<span class="Notice">※</span>)</th>
-    <td id="Cfm5" class="CfmItem"><div>&nbsp;</div></td>
-  </tr>
-  <tr>
-  <th>&nbsp;</th>
-  <td><span id="BtConfirm"><input type="submit" value="送信" /></span>&nbsp;<a id="BtCancel">書き直す</a></td>
-  </tr>
-  </table>
-</div>
-</form>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <form>
+
+      <table>
+        <tr>
+          <th class="required " colspan="2">数命籠数鑑定コース</th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+            <input id="radio-a" type="radio" name="course" value="1" checked><label for="radio-a"> ☆数命籠数鑑定のみ・お一人<br>（メール）</label><br>
+          </td>
+          <td class="mgr-10"> ￥7,000</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+            <input id="radio-b" type="radio" name="course" value="2"><label for="radio-b"> ☆数命籠数鑑定・悩み相談・お一人<br>（オンライン45分）</label><br>
+          </td>
+          <td> ￥12,000</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+            <input id="radio-c" type="radio" name="course" value="3"><label for="radio-c"> ☆数命籠数鑑定・相性鑑定・お二人<br>（オンライン60分）</label><br>
+          </td>
+          <td> ￥22,000</td>
+        </tr>
+       <tr>
+          <td>&nbsp;</td>
+          <td>
+            <input id="radio-c" type="radio" name="course" value="4"><label for="radio-c"> ☆数命籠数鑑定・家族鑑定・５名まで<br>（オンライン90分）</label><br>
+          </td>
+          <td> ￥45,000</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td class="fontsize1">現在、対応しているのは、オンライン（zoom)での鑑定です<br>お支払いは振込になります。振込先などの詳細は申込後にメールで連絡させて頂きます<br>送信元メールアドレスはxxxxxになります</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="required " colspan="2">名前</th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="name" type="text" name="name" autocomplete="name" placeholder="山田　太郎"　required="required"/>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="required " colspan="2">生年月日</th>
+        </tr>
+        <tr>
+           <td>&nbsp;</td>
+          <td>
+              <input type="date" name="calendar" max="9999-12-31" required="required"/>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="required " colspan="2">メールアドレス</th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="email" type="email" name="email" class="email" autocomplete="email" placeholder="xxxxxx@example.com"　required="required"/>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="required " colspan="2">ご希望の曜日<br>（複数回答可）</th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-1" type="checkbox" name="Mon" value="On"><label for="check-1">月曜日</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-2" type="checkbox" name="Tue" value="On"><label for="check-2">火曜日</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-3" type="checkbox" name="Wed" value="On"><label for="check-3">水曜日</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-4" type="checkbox" name="Thu" value="On"><label for="check-4">木曜日</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-5" type="checkbox" name="Fri" value="On"><label for="check-5">金曜日</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-6" type="checkbox" name="Sat" value="On"><label for="check-6">土曜日</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-7" type="checkbox" name="Sun" value="On"><label for="check-7">日曜日</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th colspan="2">ご希望時間帯</th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-time1" type="checkbox" name="time1" value="On"><label for="check-time1">10:00～13:00</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-time2" type="checkbox" name="time2" value="On"><label for="check-time2">13:00～18:00</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="check-time3" type="checkbox" name="time3" value="On"><label for="check-time3">18:00～21:00</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td class="fontsize1">ご希望に添えない場合は、メールにて日程の調整を行います</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th colspan="2">メッセージや特記事項</th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td class="fontsize1">相性診断や複数鑑定の方は、<br>他の方の生年月日を明記ください</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+            <textarea id="other" name="other" cols="30" rows="7"></textarea>
+          </td>
+        </tr>
+         <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="required" colspan="2">キャンセルについて</th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+              <input id="cancel" type="checkbox" name="cancel" value="cancel" required="required"><label for="cancel">以下のキャンセルポリシーに同意しました</label><br>
+          </td>
+        </tr>
+        <tr>
+          <th>&nbsp;</th>
+          <td colspan="3">・日時の変更は、3回まで可能です。<br>
+          ・申し込み後、5日以内に振込をお願いします。<br>
+          　振込が確認できない場合は、キャンセルとさせて頂きます。<br>
+          ・無断でのキャンセルの場合は、今後一切の申込みをお受けできません。</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th colspan="2">免責事項</th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td colspan="3" class="fontsize4">
+              ☆鑑定は独自の観点からのものとなります。絶対的な未来予想などはできかねますことをご了承ください。<br>
+              ☆当方が行うセッションメニューはエネルギーワークを用いたコーチングカウンセリングです。<br>
+              　コーチング、カウンセリングやヒーリング、エネルギーワークは、医者や医療機関を代替するものではありません。<br><br>
+              ☆ヒーリング、エネルギーワークは癒しを目的とした祈りであり、その成果の如何に関わらず心身の不調のある方は医者や医療機関に相談されることを強く推奨します。<br><br>
+              ☆ヒーリング、エネルギーワークは特定の効果を保証しません。<br>
+              　ヒーリング、エネルギーワークによる効果や成果は人によって異なります。<br><br>
+              ☆セッション終了後による心身の不調等の一切の責任は、当方では負いかねます事をご了承ください。<br><br>
+              ☆また当方は、いかなる宗教団体にも関与しておりません。また、宗教団体に対してなんの思想も持ち合わせておりません、ニュートラルな状態です。勧誘等もかたくお断りします。<br><br>
+              ☆当方のサービスを申し込まれる方は、上記の免責事項に同意、了承したとみなします。
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th colspan="2">問い合わせ先</th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td colspan="3">
+              株式会社 Star Sooul<br>
+              E-mail: XXXXX@XXX.co.jp
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="4" align="center">
+            <input type="submit" class="mt-4 btn btn-primary" value="内容確認画面へ">
+	    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">申込み</button> -->
+          </td>
+        </tr>
+      </table>
+    </form>
+    
+<!-- モーダルの設定 -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">入力内容の確認</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <p class="text-muted">選択コース</p>
+          <p class="px-2" id="modalTitle"></p>
+        </div>
+        <div>
+          <p class="text-muted">本文</p>
+          <p class="px-2" id="modalBody"></p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+        <button type="button" class="btn btn-primary">OK</button>
+      </div><!-- /.modal-footer -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
-    <script>	  
-var 	Cnt 			= jQuery('#ContactInput'), //入力部分
-			Cfm 			= jQuery('#ContactConfirm'), //確認部分
-			BtCfm 		= jQuery('#BtConfirm'), //確認ボタン
-			BtSnd 		= jQuery('#BtSend input'),//送信ボタン
-			BtCsl 		= jQuery('#BtCancel'),//キャンセルボタン
-			CntItem 	= jQuery('#ContactInput .CntItem'),//入力の包容タグ
-			CfmItem 	= jQuery('#ContactConfirm .CfmItem div');//確認の包容タグ
-/* 確認ボタン
-------------------------------------------------------------------*/
-BtCfm.click(function(){//確認ボタンを押したとき、
-	CfmItem.text(' '); //確認の中身をリセット
-	$Error = ''; //エラーのリセット
-	CntItem.ConfirmInput(); //.CntItemを対象として確認の関数を実行
-	if($Error != 'error') { //エラーがない場合
-		Cnt.fadeOut(function(){Cfm.fadeIn();}); //入力部分と確認部分を切り替え
-	}
-});
-/* キャンセルボタン
-------------------------------------------------------------------*/
-BtCsl.click(function(){ //キャンセルボタンを押したとき、
-	Cfm.fadeOut(function(){Cnt.fadeIn();}); //入力部分と確認部分を切り替え
-});
-/* 確認画面へ反映させる関数
-------------------------------------------------------------------*/
-jQuery.fn.ConfirmInput = function(config){
-    return this.each(function(i, elem) { //.CntItemを一つずつ実行
-			/*
-			入力されたものを変数「CntVal」に代入
-			------------------------------------------------------------*/
-			//<input type="text">の場合
-			if($(this).hasClass('CntInput')){
-				TargetForm = $(this).find('input');
-				CntVal = TargetForm.val();
-			//<input type="radio">の場合
-			}else if($(this).hasClass('CntRadio')){
-				TargetForm = $(this).find('input:checked');
-				CntVal = TargetForm.val();
-			//<input type="checkbox">の場合
-			}else if($(this).hasClass('CntCheck')){
-				TargetForm = $(this).find('input:checked');
-				CntCheck = '';
-				for (var i=0; i<TargetForm.length; i++) {
-					if(i != 0){ CntCheck += '、'; }
-					CntCheck += '「'+TargetForm.eq(i).val()+'」';
-				}
-				CntVal = CntCheck;
-			//<textarea>の場合
-			}else if($(this).hasClass('CntText')){
-				TargetForm = $(this).find('textarea');
-				CntVal = TargetForm.val();
-			}
-			/*
-			入力部分のIDから関連する確認部分のIDへ「CntVal」を挿入
-			------------------------------------------------------------*/
-			CntNum = $(this).attr('id').replace(/Cnt/g,''); //IDを取得後「Cnt」をカット
-			$('#Cfm'+CntNum+' div').text(CntVal);
-			/*
-			メールアドレスの欄の場合(.CntMailの場合)、形式をチェック
-			------------------------------------------------------------*/
-			if($(this).hasClass('CntMail') && !CntVal.match(/^([a-zA-Z0-9])+([a-zA-Z0-9._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9._-]+)+$/)){
-				alert('メールアドレスの形式が正しくありません。');
-				$Error = 'error'; //$Errorに中身を入れる
-				return false;
-			}
-			/*
-			必須(.Require)に中身が入っていない場合
-			------------------------------------------------------------*/
-			else if($(this).hasClass('Require') && CntVal==''){
-				alert('必須項目が入力されていません。');
-				$Error = 'error';
-				return false;
-			}
-    });
-}; </script>
+    <script>	    
+      liff.init({
+        liffId: '1657738787-JkR6dxWj'
+      }).catch((err) => {
+        console.log(err);
+      });
+
+      liff.ready.then(() => {
+        if (!liff.isLoggedIn()) {
+          liff.login();
+        }
+        const idToken = liff.getDecodedIDToken();
+        const userId = idToken.sub;
+        $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
+      })
+
+      $('form').submit(function( event ) {
+        event.preventDefault();
+          var s_name = $('#name').val();
+          var s_email = $('#email').val();
+          var s_other = $('#other').val();
+          const str1 = $('input:radio[name="course"]:checked').val();
+          if(!s_name){
+              alert("お名前が未入力です。")
+          }else if(!s_email){
+              alert("メールアドレスが未入力です。")
+          }else if( $('#check-1').prop('checked') == false && $('#check-2').prop('checked') == false && $('#check-3').prop('checked') == false && $('#check-4').prop('checked') == false && $('#check-5').prop('checked') == false && $('#check-6').prop('checked') == false && $('#check-7').prop('checked') == false){
+              alert("ご希望の曜日が未選択です。")
+          }else if(str1==3 && !s_other){
+              alert("他の方の生年月日などを「メッセージや特記事項」に記載願います");
+          }else if(str1==4 && !s_other){
+              alert("他の方の生年月日などを「メッセージや特記事項」に記載願います");
+	  }else{
+		  $.post( 'https://script.google.com/macros/s/AKfycby9z5vyfleBxMgxsqXJOWF8kNrrxhaBWpt_B6lJwFP5618ZSsiJ4la4muMhlfg_77BJ/exec', $('form').serialize() );           
+          }
+      });
+    </script>
+
 </body>
 </html>
