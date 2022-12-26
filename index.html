@@ -10,50 +10,80 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
-<form action="#" method="POST">
-@csrf
-
-<div class="form-group">
-  <label for="formTitle" class="col-form-label">タイトル</label>
-  <input type="text" class="form-control" id="formTitle" name="title" placeholder="タイトル">
+<form action="./" method="post">
+<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ 
+フォームの入力部分
+ 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<div id="ContactInput">
+  <table id="ContactTable" cellpadding="0" cellspacing="0" border="0" summary="">
+  <tr id="Cnt1" class="CntItem CntInput Require">
+    <th>お名前(<span class="Notice">※</span>)</th>
+    <td><input type="text" name="your-name" value="" size="20" /></td>
+  </tr>
+  <tr id="Cnt2" class="CntItem CntInput Require CntMail">
+    <th>メールアドレス(<span class="Notice">※</span>)</th>
+    <td><input type="email" name="your-email" value="" size="20" /></td>
+  </tr>
+  <tr id="Cnt3" class="CntItem CntRadio">
+    <th>性別</th>
+    <td><input type="radio" name="sex" value="女性" />女性<br />
+    <input type="radio" name="sex" value="男性" />男性
+    </td>
+  </tr>
+  <tr id="Cnt4" class="CntItem CntCheck Require">
+    <th>お問い合わせ項目(<span class="Notice">※</span>)</th>
+    <td>
+    <input type="checkbox" name="cat01" value="このサイトについて" />このサイトについて<br />
+    <input type="checkbox" name="cat02" value="著者について" />著者について<br />
+    <input type="checkbox" name="cat02" value="その他" />その他
+    </td>
+  </tr>
+    <tr id="Cnt5" class="CntItem CntText Require">
+    <th>お問い合わせ内容(<span class="Notice">※</span>)</th>
+    <td><textarea name="your-message"></textarea></td>
+  </tr>
+  <tr>
+    <th>&nbsp;</th>
+    <td><a id="BtConfirm">入力内容の確認</a>&nbsp;
+    <input id="BtReset" type="reset" value="入力内容のリセット"></td>
+  </tr>
+  </table>
 </div>
-
-<div class="form-group">
-  <label for="formBody" class="col-form-label">本文</label>
-  <textarea id="formBody" name="body" class="form-control" rows="10" placeholder="本文"></textarea>
+<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ 
+確認画面
+ 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<div id="ContactConfirm">
+  <table id="ConfirmTable" cellpadding="0" cellspacing="0" border="0" summary="">
+  <tr>
+    <th>お名前(<span class="Notice">※</span>)</th>
+    <td id="Cfm1" class="CfmItem"><div>&nbsp;</div></td>
+  </tr>
+  <tr>
+    <th>メールアドレス(<span class="Notice">※</span>)</th>
+    <td id="Cfm2" class="CfmItem"><div>&nbsp;</div></td>
+  </tr>
+  <tr>
+    <th>性別</th>
+    <td id="Cfm3" class="CfmItem"><div>&nbsp;</div></td>
+  </tr>
+  <tr>
+    <th>お問い合わせ項目(<span class="Notice">※</span>)</th>
+    <td id="Cfm4" class="CfmItem"><div>&nbsp;</div></td>
+  </tr>
+  <tr>
+    <th>お問い合わせ内容(<span class="Notice">※</span>)</th>
+    <td id="Cfm5" class="CfmItem"><div>&nbsp;</div></td>
+  </tr>
+  <tr>
+  <th>&nbsp;</th>
+  <td><span id="BtConfirm"><input type="submit" value="送信" /></span>&nbsp;<a id="BtCancel">書き直す</a></td>
+  </tr>
+  </table>
 </div>
-
-<div class="form-group row justify-content-center">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">送信</button>
-</div>
-
-<!-- モーダルの設定 -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">入力内容の確認</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div>
-          <p class="text-muted">タイトル</p>
-          <p class="px-2" id="modalTitle"></p>
-        </div>
-        <div>
-          <p class="text-muted">本文</p>
-          <p class="px-2" id="modalBody"></p>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-        <button type="button" class="btn btn-primary">OK</button>
-      </div><!-- /.modal-footer -->
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 </form>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -62,15 +92,79 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>	  
-      $(function() {
-  $('#exampleModal').on('show.bs.modal', function () {
-    var title = $('#formTitle').val()
-    var body = $('#formBody').val()
-    var modal = $(this)
-    modal.find('#modalTitle').text(title)
-    modal.find('#modalBody').text(body)
-  })
-})
-    </script>
+var 	Cnt 			= jQuery('#ContactInput'), //入力部分
+			Cfm 			= jQuery('#ContactConfirm'), //確認部分
+			BtCfm 		= jQuery('#BtConfirm'), //確認ボタン
+			BtSnd 		= jQuery('#BtSend input'),//送信ボタン
+			BtCsl 		= jQuery('#BtCancel'),//キャンセルボタン
+			CntItem 	= jQuery('#ContactInput .CntItem'),//入力の包容タグ
+			CfmItem 	= jQuery('#ContactConfirm .CfmItem div');//確認の包容タグ
+/* 確認ボタン
+------------------------------------------------------------------*/
+BtCfm.click(function(){//確認ボタンを押したとき、
+	CfmItem.text(' '); //確認の中身をリセット
+	$Error = ''; //エラーのリセット
+	CntItem.ConfirmInput(); //.CntItemを対象として確認の関数を実行
+	if($Error != 'error') { //エラーがない場合
+		Cnt.fadeOut(function(){Cfm.fadeIn();}); //入力部分と確認部分を切り替え
+	}
+});
+/* キャンセルボタン
+------------------------------------------------------------------*/
+BtCsl.click(function(){ //キャンセルボタンを押したとき、
+	Cfm.fadeOut(function(){Cnt.fadeIn();}); //入力部分と確認部分を切り替え
+});
+/* 確認画面へ反映させる関数
+------------------------------------------------------------------*/
+jQuery.fn.ConfirmInput = function(config){
+    return this.each(function(i, elem) { //.CntItemを一つずつ実行
+			/*
+			入力されたものを変数「CntVal」に代入
+			------------------------------------------------------------*/
+			//<input type="text">の場合
+			if($(this).hasClass('CntInput')){
+				TargetForm = $(this).find('input');
+				CntVal = TargetForm.val();
+			//<input type="radio">の場合
+			}else if($(this).hasClass('CntRadio')){
+				TargetForm = $(this).find('input:checked');
+				CntVal = TargetForm.val();
+			//<input type="checkbox">の場合
+			}else if($(this).hasClass('CntCheck')){
+				TargetForm = $(this).find('input:checked');
+				CntCheck = '';
+				for (var i=0; i<TargetForm.length; i++) {
+					if(i != 0){ CntCheck += '、'; }
+					CntCheck += '「'+TargetForm.eq(i).val()+'」';
+				}
+				CntVal = CntCheck;
+			//<textarea>の場合
+			}else if($(this).hasClass('CntText')){
+				TargetForm = $(this).find('textarea');
+				CntVal = TargetForm.val();
+			}
+			/*
+			入力部分のIDから関連する確認部分のIDへ「CntVal」を挿入
+			------------------------------------------------------------*/
+			CntNum = $(this).attr('id').replace(/Cnt/g,''); //IDを取得後「Cnt」をカット
+			$('#Cfm'+CntNum+' div').text(CntVal);
+			/*
+			メールアドレスの欄の場合(.CntMailの場合)、形式をチェック
+			------------------------------------------------------------*/
+			if($(this).hasClass('CntMail') && !CntVal.match(/^([a-zA-Z0-9])+([a-zA-Z0-9._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9._-]+)+$/)){
+				alert('メールアドレスの形式が正しくありません。');
+				$Error = 'error'; //$Errorに中身を入れる
+				return false;
+			}
+			/*
+			必須(.Require)に中身が入っていない場合
+			------------------------------------------------------------*/
+			else if($(this).hasClass('Require') && CntVal==''){
+				alert('必須項目が入力されていません。');
+				$Error = 'error';
+				return false;
+			}
+    });
+}; </script>
 </body>
 </html>
